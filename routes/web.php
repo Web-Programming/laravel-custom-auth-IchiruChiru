@@ -60,4 +60,5 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 
-
+Route::get('register', [RegisterController::class, 'register']);
+Route::get('login', [RegisterController::class, 'login']);
