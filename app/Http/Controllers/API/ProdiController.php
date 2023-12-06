@@ -16,7 +16,7 @@ class ProdiController extends BaseController
     public function store(Request $request){
         $validasi = $request->validate([
             'nama' => 'required|min:5|max:20',
-            'nama' => 'required|file|image|max:5000'
+            'foto' => 'required|file|image|max:5000'
         ]);
     }
 }
