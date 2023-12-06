@@ -2,10 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
+use App\Models\Prodi;
+use App\Http\Controllers\API\BaseController as BaseController;
 use Illuminate\Http\Request;
 
-class ProdiController extends Controller
+class ProdiController extends BaseController
 {
-    //
+    public function index(){
+        $prodis = Prodi::all();
+        $success['data'] = $prodis;
+        return $this->sendResponse($success,'Data prodi.');
+    }
 }
