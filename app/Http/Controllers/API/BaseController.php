@@ -47,7 +47,7 @@ class BaseController extends Controller
         //
     }
 
-    public function sendRespone($result, $message){
+    public function sendResponse($result, $message){
         $response = [
             'success' => true,
             'data' => $result,
