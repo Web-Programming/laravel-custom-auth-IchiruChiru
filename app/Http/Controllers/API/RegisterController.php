@@ -3,9 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\API\BaseController as BaseController;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Validator;
 
-class RegisterController extends Controller
+class RegisterController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -53,7 +56,8 @@ class RegisterController extends Controller
             'email' => 'required|email',
             'password' => 'required',
             'c_password' => 'required|same:password',
-            'role' => 'required'
+            'level' => 'required',
+            'username' => 'required',
         ]);
 
         if($validator->fails()){
