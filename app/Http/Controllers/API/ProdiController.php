@@ -13,4 +13,10 @@ class ProdiController extends BaseController
         $success['data'] = $prodis;
         return $this->sendResponse($success,'Data prodi.');
     }
+    public function store(Request $request){
+        $validasi = $request->validate([
+            'nama' => 'required|min:5|max:20',
+            'nama' => 'required|file|image|max:5000'
+        ]);
+    }
 }
